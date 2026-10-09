@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit">
+  <label for="email">Email</label>
+  <input id="email" type="email" formControlName="email">
+  <div *ngIf="isInvalid('email')" class="error">
+    Email is required
+  </div>
+
+  <label for="password">Password</label>
+  <input id="password" type="text" formControlName="password">
+  <div *ngIf="isInvalid('password')" class="error">
+    Password must be at least 8 characters
+  </div>
+
+  <button type="submit" [disabled]="form.valid">Login</button>
+</form>

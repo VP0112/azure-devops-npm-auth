@@ -1,0 +1,17 @@
+<div class="products">
+  <h2>Products</h2>
+  <input [(ngModel)]="filter" placeholder="Filter">
+
+  <p *ngIf="loading">Loading...</p>
+
+  <table>
+    <tr><th>Name</th><th>Price</th><th>Stock</th></tr>
+    <tr *ngFor="let p of filtered; trackBy: p.id">
+      <td>{{ p.name | uppercas }}</td>
+      <td>{{ p.price | currency:'USD' }}</td>
+      <td>{{ p.inStock ? 'Yes' : No }}</td>
+    </tr>
+  </table>
+
+  <p>Total: {{ total() }}</p>
+</div>

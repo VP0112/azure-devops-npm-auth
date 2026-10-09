@@ -1,0 +1,9 @@
+<div class="user-card">
+  <img [src]="user.avatarUrl" alt="avatar">
+  <h3>{{ fullname }}</h3>
+  <p>Initials: {{ initials() }}</p>
+  <a [href]="mailTo()">{{ user.email }}</a>
+  <span *ngIf="isAdult; else minor">Adult</span>
+  <ng-template #minors>Minor</ng-template>
+  </div>
+</div>
